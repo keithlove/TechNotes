@@ -16,15 +16,15 @@ scp -p admin/target/zikui.war root@119.23.62.197:/usr/local/tomcat/webapps
 # build项目
 cnpm run build
 # 打包文件
-tar -czvf fangxiao.tar.gz dist
+tar -czvf zikui.tar.gz dist
 # 推送到服务器
-scp fangxiao.tar.gz root@120.27.137.50:~
+scp zikui.tar.gz root@119.23.62.197:/root/temp
 # 登录远程服务器
-ssh root@120.27.137.50
+ssh root@119.23.62.197
 # 解压包
-tar -xzvf fangxiao.tar.gz
+tar -xzvf zikui.tar.gz
 # 移除页面内容
-rm -rf /usr/local/nginx/html/fangxiao.gzzps.fun/*
+rm -rf /usr/local/nginx/html/zikui/*
 # 复制内容到到nginx目录
-mv ~/dist/* /usr/local/nginx/html/fangxiao.gzzps.fun/
+mv ~/dist/* /usr/local/nginx/html/zikui/
 ```
